@@ -2,12 +2,12 @@
 
 ## 기본형
 ```{.TypeScript}
-class ClassName { 
-  mVariable:string;
-  mFunction(arg: number): number {
-    return number;
-  }
-}
+    class ClassName { 
+      mVariable:string;
+      mFunction(arg: number): number {
+        return number;
+      }
+    }
 ```
 
 ```{.TypeScript}
@@ -19,6 +19,7 @@ class ClassName {
 }
 ```
 ## 생성자
+
 ## 상속
 ## 제한자
 ## Static
