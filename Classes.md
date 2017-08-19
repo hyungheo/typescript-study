@@ -1,7 +1,7 @@
 # Classes
 
 ## 기본형
-```{.TypeScript}
+```
     class ClassName { 
       mVariable:string;
       mFunction(arg: number): number {
@@ -10,7 +10,7 @@
     }
 ```
 
-```{.TypeScript}
+```
 class ClassName { 
   mVariable:string;
   mFunction: (arg: number) => number {
