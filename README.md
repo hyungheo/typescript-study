@@ -7,7 +7,7 @@
 ## Interfaces
 [Interfaces.md]
 ## Classes
-[Classes.md]
+[Classes.md](https://github.com/hyungheo/typescript-study/edit/master/Classes.md)
 ## Functions
 [Functions.md]
 ## Generics
