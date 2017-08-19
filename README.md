@@ -1,17 +1,17 @@
 # Typescript-study
 
 ## Basic Types
-[BasicType.md](https://github.com/hyungheo/typescript-study/edit/master/BasicType.md)
+[BasicType](https://github.com/hyungheo/typescript-study/edit/master/BasicType.md)
 ## Variable Declarations
-[VariableDeclarations.md](https://github.com/hyungheo/typescript-study/edit/master/VariableDeclarations.md)
+[VariableDeclarations](https://github.com/hyungheo/typescript-study/edit/master/VariableDeclarations.md)
 ## Interfaces
 [Interfaces](https://github.com/hyungheo/typescript-study/edit/master/Interfaces.md)
 ## Classes
 [Classes](https://github.com/hyungheo/typescript-study/edit/master/Classes.md)
 ## Functions
-[Functions.md]
+[Functions](https://github.com/hyungheo/typescript-study/edit/master/Functions.md)
 ## Generics
-[Generics.md]
+[Generics](https://github.com/hyungheo/typescript-study/edit/master/Generics.md)
 ## Enums
 [Enums.md]
 ## Type Inference
