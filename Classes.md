@@ -1,16 +1,16 @@
 # Classes
 
 ## 기본형
-```
-    class ClassName { 
-      mVariable:string;
-      mFunction(arg: number): number {
-        return number;
-      }
-    }
+```TypeScript
+class ClassName { 
+  mVariable:string;
+  mFunction(arg: number): number {
+    return number;
+  }
+}
 ```
 
-```
+```TypeScript
 class ClassName { 
   mVariable:string;
   mFunction: (arg: number) => number {
