@@ -1,13 +1,13 @@
 # Typescript-study
 
 ## Basic Types
-[BasicType.md]
+[BasicType.md](https://github.com/hyungheo/typescript-study/edit/master/BasicType.md)
 ## Variable Declarations
-[Variable Declarations.md]
+[VariableDeclarations.md](https://github.com/hyungheo/typescript-study/edit/master/VariableDeclarations.md)
 ## Interfaces
-[Interfaces.md]
+[Interfaces](https://github.com/hyungheo/typescript-study/edit/master/Interfaces.md)
 ## Classes
-[Classes.md](https://github.com/hyungheo/typescript-study/edit/master/Classes.md)
+[Classes](https://github.com/hyungheo/typescript-study/edit/master/Classes.md)
 ## Functions
 [Functions.md]
 ## Generics
