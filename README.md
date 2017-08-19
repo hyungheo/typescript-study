@@ -1,7 +1,7 @@
 # Typescript-study
 
 ## Basic Types
-[BasicType,md]
+[BasicType.md]
 ## Variable Declarations
 [Variable Declarations.md]
 ## Interfaces
