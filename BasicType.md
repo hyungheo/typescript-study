@@ -19,3 +19,30 @@ let notSure: any = 4;
 notSure = "maybe a string instead";
 notSure = false; // okay, definitely a boolean
 ```
+
+#Never
+```TypeScript
+// Function returning never must have unreachable end point
+function error(message: string): never {
+    throw new Error(message);
+}
+
+// Inferred return type is never
+function fail() {
+    return error("Something failed");
+}
+
+// Function returning never must have unreachable end point
+function infiniteLoop(): never {
+    while (true) {
+    }
+}
+```
+
+#Type assertions
+```TypeScript
+let someValue: any = "this is a string";
+
+let strLength: number = (<string>someValue).length;
+let strLength: number = (someValue as string).length;
+```
