@@ -204,8 +204,7 @@ class Lion extends Animal {
 function createInstance<A extends Animal>(c: new () => A): A {
     return new c();
 }
+createInstance(Lion).keeper.nametag;
 ```
 
-위 예제는  Animal 클래스를 상속받는 클래스만 인스턴스로 생성하는 createInstance 함수를 구현한 예이다.
-```ㅁ
-```
+위 예제는  Animal 클래스를 상속받는 클래스만 인스턴스로 생성하는 createInstance 함수를 구현한 예이다.타입매개변수 A 는 Animal 을 상속받도록 선언했기 때문에 createInstance 는 Bee 와 Lion 만 인스턴스로 생성한다.
