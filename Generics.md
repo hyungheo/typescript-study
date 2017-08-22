@@ -107,7 +107,7 @@ function f<T>(arg: T) {
 let a: number = f<number>(100);
 ```
 
-제네릭함수 호출시 타입을 명시하지 않아도 컴파일러가  사용된 값을 보고 추론해서 자동으로 적용해 주기도 한다.
+제네릭함수 호출시 타입을 명시하지 않아도 컴파일러가 사용된 값을 보고 추론해서 자동으로 적용해 주기도 한다.
 
 ```TypeScript
 let a = f(100);
@@ -138,5 +138,29 @@ or
 
 let c: I<number> = {member: number = 100;};
 ```
+
+### 타입매개변수에 제약조건을 추가
+타입매개변수는 extends 키워드를 이용해서 interface 나 class 를 상속받을 수 있다.
+```TypeScript
+interface I{
+  length: number;
+}
+
+function f<T>(arg: T extends I): number{
+  return arg.length;
+}
+
+let param = {
+  length: number = 10; 
+  value: string = 'hello world';
+};
+
+f(param);
+
+```
+위와 같이 타입매개변수가 인터페이스를 상속받을 경우 제네릭함수는 반드시 length 를 프로퍼티로 포함하고 있어야 한다.
+이렇게 특정 조건을 추가하고 싶을때는 인터페이스나 class 를 이용한다.
+
+
 
 
