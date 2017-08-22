@@ -140,7 +140,8 @@ let c: I<number> = {member: number = 100;};
 ```
 
 ## 타입매개변수에 제약조건을 추가하는 방법
-타입매개변수는 extends 키워드를 이용해서 interface 나 class 를 상속받을 수 있다.
+타입매개변수에 특정 조건들을 추가해야 할 필요가 있을 수도 있다. 예를 들면 타입매개변수가 치환될 타입은 반드시 length 를 프로퍼티로 포함하고 있어야 한다고 가정하자.
+이 경우 extends 키워드를 이용해서 제약 조건을 interface에 추가한 뒤 타입매개변수가 이를 상속받도록 하면 된다.
 ```TypeScript
 interface I{
   length: number;
