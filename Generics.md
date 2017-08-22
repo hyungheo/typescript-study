@@ -17,10 +17,10 @@ function f<T>(arg: T): T {
 }
 ```
 
-위에서 보면 함수 이름 뒤에 <T> 가 추가된 것을 볼수 있다. <T> 를 타입변수라고 한다.
-함수이름 뒤에 타입변수가 추가되면 함수안에서는 타입변수를 타입대신에 사용할 수가 있다.
+위에서 보면 함수 이름 뒤에 <T> 가 추가된 것을 볼수 있다. <T> 를 타입매개변수라고 한다.
+함수이름 뒤에 타입변수가 추가되면 함수안에서는 타입매개변수를 타입대신에 사용할 수가 있다.
 
-타입변수는 제네릭 함수가 호출될 때 실제 타입으로 바꾸어 줘야 한다.
+타입매개변수는 제네릭 함수가 호출될 때 실제 타입으로 바꾸어 줘야 한다.
 ```TypeScript
 let ret: string = f<string>("hello world");
 ```
@@ -60,4 +60,74 @@ function f<T>(arg: T): T {
 
 let ret: number = f<number>("hello world"); //<== 컴파일 에러 발생!!
 ```
-결국 제네릭은 any와는 다르게 함수 호출시 타입을 확정함으로써 잘못된 타입사용의 오류를 컴파일에러로 막아준다.
+결국 제네릭은 any와는 다르게 함수 호출시 타입을 확정함으로써 잘못 사용된 타입 오류를 컴파일에러로 막아준다.
+
+## 제네릭은 언제 필요할까?
+제네릭은 타입에 대한 유연성을 제공하여 코드의 재사용성을 높여준다. 
+예를 들어 두 배열을 매개변수로 받은 뒤, 배열들의 길이를 합하여 반환하는 함수 f1이 있다.
+```TypeScript
+function f1(arg1: number[], arg2: number[]): number {
+  return (arg1.length + arg2.length);
+}
+```
+만약 숫자를 담고 있는 배열이 아닌 문자열을 담고 있는 배열의 합을 구하고 싶다면 함수 f2를 새로 선언해 주어야 한다.
+```TypeScript
+function f2(arg1: string[], arg2: string[]): number {
+  return (arg1.length + arg2.length);
+}
+```
+숫자가 담긴 배열과 문자열이 담긴 배열의 합을 구하고 싶은 경우에도 함수 f3를 새로 선언해 주어야 한다.
+```TypeScript
+function f3(arg1: number[], arg2: string[]): number {
+  return (arg1.length + arg2.length);
+}
+```
+하지만 f1, f2, f3 모두 매개변수의 타입을 제외하면 배열의 길이의 합을 반환하는 기능은 동일하다. 
+제네릭을 사용할 경우 세개의 함수를 각각 따로 선언할 필요없이 하나의 함수선언으로 모두 사용가능하다.
+
+```TypeScript
+function f<T, E>(arg1: Array<T>, arg2: Array<E>): number {
+  return (arg1.length + arg2.length);
+}
+
+let len: number = f<number, number>([1,2,3,4,5], [6,7,8]);
+let len: number = f<string, string>(['a','b','c','d','e'], ['f','g','h']);
+let len: number = f<number, string>([1,2,3,4,5], ['f','g','h']);
+```
+## 제네릭 사용법
+
+제네릭은 함수 클래스 인터페이스에 사용할 수 있다. 기본적으로 타입매개변수를 선언부에 추가함으로 사용가능하다.
+
+```TypeScript
+function f<T>(arg: T) {
+  return arg;
+}
+
+let a: number = f<number>(100);
+
+class C<T> {
+  private mVar: T;
+  constructor(arg: T) {this.mVar = arg};
+}
+
+let c: C<string> = new C<string>("hello world"); 
+
+interface I<T> {
+  member: T;
+}
+
+class intfImpl implements I<number> {
+  public member: number;
+}
+
+or
+
+let c: I<number> = {member: number = 100;};
+
+or 
+
+let c: I<number>;
+c.member = 100;
+```
+
+
