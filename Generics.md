@@ -163,8 +163,8 @@ f(param);
 이렇게 특정 조건을 추가하고 싶을때는 인터페이스를 이용한다.
 
 ### 타입매개변수의 제약조건으로 MAP 의 Key 타입을 추가하기
-타입 매개변수의 조건으로 MAP 의 키값이어야 한다는 조건을 추가할 수 도 있다.
 
+타입 매개변수의 조건으로 MAP 의 키값이어야 한다는 조건을 추가할 수 도 있다.
 ```TypeScript
 function getProperty<T, K extends keyof T>(obj: T, key: K) {
     return obj[key];
@@ -172,7 +172,7 @@ function getProperty<T, K extends keyof T>(obj: T, key: K) {
 
 let x = { a: 1, b: 2, c: 3, d: 4 };
 
-getProperty(x, "a"); // okay
-getProperty(x, "m"); // error: Argument of type 'm' isn't assignable to 'a' | 'b' | 'c' | 'd'.
+getProperty(x, "a"); // a 는 x 의 키값이므로 문제가 없으나
+getProperty(x, "m"); // m 은 x 의 키값이 아니므로 컴파일타임에서 오류가 발생한다.
 ```
-
+위 경우 타입 매개변수 K 가 MAP 의 key 값이라는 조건을 상속받았기 때문에 K 는 반드시 T의 Key 값이어야만 한다.
