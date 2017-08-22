@@ -96,7 +96,7 @@ let len: number = f<number, string>([1,2,3,4,5], ['f','g','h']);
 ```
 ## 제네릭 사용법
 
-제네릭은 함수 클래스 인터페이스에 사용할 수 있다. 기본적으로 타입매개변수를 선언부에 추가함으로 사용가능하다.
+제네릭은 "함수/클래스/인터페이스" 에 사용할 수 있다. 기본적으로 타입매개변수(ex: <T>)를 선언부에 추가함으로 사용가능하며 호출하거나 인스턴스생성시에 타입매개변수를 실제 타입으로 바꿔줘야 한다.
 
 ### 제네릭 함수의 선언과 사용
 ```TypeScript
@@ -125,6 +125,7 @@ interface I<T> {
 
 class intfImpl implements I<number> {
   public member: number;
+  constructor(arg: number) {this.member = arg};
 }
 
 or
