@@ -139,7 +139,7 @@ or
 let c: I<number> = {member: number = 100;};
 ```
 
-### 타입매개변수에 제약조건을 추가
+## 타입매개변수에 제약조건을 추가하는 방법
 타입매개변수는 extends 키워드를 이용해서 interface 나 class 를 상속받을 수 있다.
 ```TypeScript
 interface I{
@@ -158,9 +158,20 @@ let param = {
 f(param);
 
 ```
-위와 같이 타입매개변수가 인터페이스를 상속받을 경우 제네릭함수는 반드시 length 를 프로퍼티로 포함하고 있어야 한다.
-이렇게 특정 조건을 추가하고 싶을때는 인터페이스나 class 를 이용한다.
+위와 같이 타입매개변수가 인터페이스를 상속받을 경우 제네릭함수 f의 매개변수는 반드시 length 를 프로퍼티로 포함하고 있어야 한다.
+이렇게 특정 조건을 추가하고 싶을때는 인터페이스를 이용한다.
 
+### 타입매개변수의 제약조건으로 MAP 의 Key 타입을 추가하기
+타입 매개변수의 조건으로 MAP 의 키값이어야 한다는 조건을 추가할 수 도 있다.
 
+```TypeScript
+function getProperty<T, K extends keyof T>(obj: T, key: K) {
+    return obj[key];
+}
 
+let x = { a: 1, b: 2, c: 3, d: 4 };
+
+getProperty(x, "a"); // okay
+getProperty(x, "m"); // error: Argument of type 'm' isn't assignable to 'a' | 'b' | 'c' | 'd'.
+```
 
