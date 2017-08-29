@@ -8,7 +8,7 @@ JavaScript 를 단순히 브라우저에 종속된 언어가 아닌 Common 하�
   
 CommonJS 의 스펙에 따라 구현된 대표적인 예에는 Node.js 가 있다.
 ```JavaScript
-define([./module1, ./module2, ./module3...], function
+define(id , [require, export, modules...], function() {...});
 ```
  
 
