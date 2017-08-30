@@ -56,7 +56,24 @@ root/src/moduleB/lib/mainModule.js 를 참조
   
  3./root/src/moduleB/index.js
 
-### node 방식에서 비 상대주소를 사용할 경우 
+### node 방식에서 상대주소를 사용하지 않을경우
+
+위에서는 상대주소 (./ or ../ 으로 시작하는)로 모듈의 위치를 명시했는데 상대주소를 사용하지 않고 아래와 같이 모듈의 이름만을 명시하게되면 node_modules 에서 모듈을 찾게 된다. 
+```TypeScript
+var x = require("moduleB");
+```
+
+1. /root/src/node_modules/moduleB.js
+2. /root/src/node_modules/moduleB/package.json (if it specifies a "main" property)
+3. /root/src/node_modules/moduleB/index.js 
+
+4. /root/node_modules/moduleB.js
+5. /root/node_modules/moduleB/package.json (if it specifies a "main" property)
+6. /root/node_modules/moduleB/index.js 
+
+7. /node_modules/moduleB.js
+8. /node_modules/moduleB/package.json (if it specifies a "main" property)
+9. /node_modules/moduleB/index.js
 
 
 
