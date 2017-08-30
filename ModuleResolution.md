@@ -105,7 +105,7 @@ import { b } from "./moduleB"
 상대경로로 하지 않을 때는 다음 순서로 탐색된다.  
 ```TypeScript
 import { b } from "moduleB"
-  
+``` 
     1. /root/src/node_modules/moduleB.ts
     2. /root/src/node_modules/moduleB.tsx
     3. /root/src/node_modules/moduleB.d.ts
@@ -201,7 +201,7 @@ tsconfig.json
 }
 ```
 
-#{locale} <== 패스토큰이라고 한다.
+#{locale} <== 패스토큰이라고 한다.  
 locale 과 같은 컴파일타임에 가변적으로 생성되는 경로를 명시해 주고자 할때 rootDirs 플래그를 사용하면 된다.
 
 
