@@ -122,13 +122,13 @@ import { b } from "moduleB"
     13. /root/node_modules/moduleB/index.tsx
     14. /root/node_modules/moduleB/index.d.ts
 
-    /node_modules/moduleB.ts
-    /node_modules/moduleB.tsx
-    /node_modules/moduleB.d.ts
-    /node_modules/moduleB/package.json (if it specifies a "types" property)
-    /node_modules/moduleB/index.ts
-    /node_modules/moduleB/index.tsx
-    /node_modules/moduleB/index.d.ts
+    15. /node_modules/moduleB.ts
+    16. /node_modules/moduleB.tsx
+    17. /node_modules/moduleB.d.ts
+    18. /node_modules/moduleB/package.json (if it specifies a "types" property)
+    19. /node_modules/moduleB/index.ts
+    20. /node_modules/moduleB/index.tsx
+    21. /node_modules/moduleB/index.d.ts
   
 ## paths
   
