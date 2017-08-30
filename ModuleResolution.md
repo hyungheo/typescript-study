@@ -54,7 +54,9 @@ var x = require("./moduleB");
 ```
 root/src/moduleB/lib/mainModule.js 를 참조  
   
-3./root/src/moduleB/index.js
+ 3./root/src/moduleB/index.js
+
+### node 방식에서 비 상대주소를 사용할 경우 
 
 
 
